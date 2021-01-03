@@ -16,7 +16,7 @@ RUN R -e 'BiocManager::install(c("fgsea"))'
 RUN R -e 'BiocManager::install(c("KEGG.db"))'
 RUN R -e 'BiocManager::install(c("GO.db"))'
 RUN R -e 'BiocManager::install(c("org.Hs.eg.db"))'
-RUN R -e 'BiocManager::install(c("org.Hm.eg.db"))'
+RUN R -e 'BiocManager::install(c("org.Mm.eg.db"))'
 
 # Set version correctly so user can install gbox
 # Requires bash and sed to set version in yamls
