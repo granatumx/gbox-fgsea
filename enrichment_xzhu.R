@@ -154,10 +154,10 @@ geneScores <- gn_get_import('genesAndScores')
 alterChoice <- gn_get_arg('alterChoice')
 
 if(alterChoice == "pos") {
-  alterChoice <- alterChoice[alterChoice[2] >= 0.0]
+  geneScores <- geneScores[geneScores[1] >= 0.0]
 } else if(alterChoice == "neg") {
-  alterChoice <- alterChoice[alterChoice[2] <= 0.0]
-  alterChoice <- -alterChoice
+  geneScores <- geneScores[geneScores[1] <= 0.0]
+  geneScores <- geneScores %>% mutate_if(is.numeric, funs(. * -1))
 }
 
 # We would need another way to get the label for this data, e.g., Cluster 2 vs. rest. [20180717 tkwolf]
