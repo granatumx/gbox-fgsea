@@ -159,7 +159,7 @@ if(alterChoice == "pos") {
   geneScores <- geneScores[geneScores >= 0.0]
 } else if(alterChoice == "neg") {
   geneScores <- geneScores[geneScores <= 0.0]
-  geneScores <- geneScores.map(function(x) -x)
+  geneScores <- map(geneScores, function(x) -x)
 }
 
 # We would need another way to get the label for this data, e.g., Cluster 2 vs. rest. [20180717 tkwolf]
