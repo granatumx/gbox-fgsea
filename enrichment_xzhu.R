@@ -151,6 +151,15 @@ enrichmentMethod <- gn_get_arg('geneSetDatabase')
 # WARNING! Expects the first element in the list to have the gene/value
 # records that will be used for enrichment analysis
 geneScores <- gn_get_import('genesAndScores')
+alterChoice <- gn_get_arg('alterChoice')
+
+if(alterChoice == "pos") {
+  alterChoice <- alterChoice[alterChoice[2] >= 0.0]
+} else if(alterChoice == "neg") {
+  alterChoice <- alterChoice[alterChoice[2] <= 0.0]
+  alterChoice <- -alterChoice
+}
+
 # We would need another way to get the label for this data, e.g., Cluster 2 vs. rest. [20180717 tkwolf]
 #title <- names(geneScores)
 title <- '' # KEGG or GO will be prefixed to this
