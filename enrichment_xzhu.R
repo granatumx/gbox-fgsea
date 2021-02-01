@@ -155,9 +155,6 @@ alterChoice <- gn_get_arg('alterChoice')
 
 print(geneScores)
 
-def negateValues(n):
-  return -n
-
 if(alterChoice == "pos") {
   geneScores <- geneScores[geneScores >= 0.0]
 } else if(alterChoice == "neg") {
