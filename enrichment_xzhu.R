@@ -153,8 +153,6 @@ enrichmentMethod <- gn_get_arg('geneSetDatabase')
 geneScores <- gn_get_import('genesAndScores')
 alterChoice <- gn_get_arg('alterChoice')
 
-print(geneScores)
-
 if(alterChoice == "pos") {
   geneScores <- geneScores[geneScores >= 0.0]
 } else if(alterChoice == "neg") {
